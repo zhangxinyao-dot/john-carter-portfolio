@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brutal-pink: #FF6B8B;
+  --color-brutal-blue: #4A90E2;
+  --color-brutal-yellow: #FFD93D;
+  --color-brutal-purple: #8B5CF6;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-black antialiased;
+  }
+}
+
+@layer components {
+  .brutal-card {
+    @apply border-2 border-black rounded-2xl bg-white overflow-hidden transition-all duration-200;
+  }
+  
+  .brutal-shadow {
+    @apply shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
+  }
+
+  .brutal-shadow-hover:hover {
+    @apply shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] -translate-x-0.5 -translate-y-0.5;
+  }
+
+  .brutal-btn-primary {
+    @apply bg-black text-white px-6 py-3 rounded-xl border-2 border-black font-semibold flex items-center gap-2 hover:bg-neutral-800 transition-colors;
+  }
+
+  .brutal-btn-secondary {
+    @apply bg-white text-black px-6 py-3 rounded-xl border-2 border-black font-semibold flex items-center gap-2 hover:bg-neutral-50 transition-colors;
+  }
+
+  .brutal-badge {
+    @apply bg-black text-white text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full font-bold;
+  }
+}
